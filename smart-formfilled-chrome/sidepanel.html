@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>JP ES Assistant</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>JP ES Assistant</h1>
+        <p>ESフォーム入力補助</p>
+      </div>
+      <button id="saveBtn">保存</button>
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="insert">挿入</button>
+      <button class="tab" data-tab="edit">資料編集</button>
+    </div>
+
+    <main id="insertView"></main>
+
+    <main id="editView" class="hidden"></main>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

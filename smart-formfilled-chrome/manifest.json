@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "JP ES Form Assistant",
+  "version": "1.0.1",
+  "description": "日本就活・Entry Sheet 填写辅助工具",
+  "permissions": ["storage", "activeTab", "tabs", "scripting", "sidePanel"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "JP ES Assistant"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
