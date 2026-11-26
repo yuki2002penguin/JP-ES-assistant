@@ -34,7 +34,7 @@
 1. 本リポジトリをクローン、またはZIP形式でダウンロードします。
 
    ```bash
-   git clone https://github.com/yuki2002penguin/jp-es-form-assistant.git
+   git clone https://github.com/yuki2002penguin/JP-ES-assistant.git
    ```
 
 2. Google Chromeで `chrome://extensions/` を開きます。
