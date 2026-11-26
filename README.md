@@ -1,2 +1,74 @@
-# JP-ES-assistant
-A Chrome extension that streamlines Japanese job application forms and entry sheets (ES).
+# JP ES Form Assistant
+
+日本の就職活動におけるエントリーシート（ES）や応募フォームへの入力を効率化するChrome拡張機能です。
+
+## 開発背景
+
+日本の就職活動では、企業ごとに異なる応募フォームに氏名、住所、学歴、資格、研究内容などを繰り返し入力する必要があります。
+
+また、企業によって「高校」と「高校名」、「電話」と「電話番号」など、同じ情報でも項目名や入力形式が異なるため、ブラウザ標準の自動入力機能だけでは十分に対応できない場合があります。
+
+自身の就職活動で感じたこうした課題を解決するため、本ツールを個人開発しました。
+
+## 主な機能
+
+- 基本情報・学歴・資格・ES回答などの登録と管理
+- Chromeのサイドパネルから登録情報を参照
+- 選択した情報をWebフォームの入力欄に挿入
+- 電話番号や住所など、異なる入力形式への対応
+- 登録データのローカル保存
+
+## 使用技術
+
+| Category | Technology |
+| --- | --- |
+| Frontend | HTML5, CSS3, JavaScript (ES6+) |
+| Browser Extension | Chrome Extension Manifest V3 |
+| UI | Chrome Side Panel API |
+| Data Storage | Chrome Storage API |
+| Form Interaction | Content Scripts, DOM Manipulation |
+| Version Control | Git, GitHub |
+
+## インストール方法
+
+1. 本リポジトリをクローン、またはZIP形式でダウンロードします。
+
+   ```bash
+   git clone https://github.com/yuki2002penguin/jp-es-form-assistant.git
+   ```
+
+2. Google Chromeで `chrome://extensions/` を開きます。
+3. 右上の「デベロッパーモード」を有効にします。
+4. 「パッケージ化されていない拡張機能を読み込む」をクリックします。
+5. ダウンロードしたプロジェクトのフォルダを選択します。
+
+## 使用方法
+
+1. 拡張機能のサイドパネルを開きます。
+2. 就職活動で使用する情報を登録します。
+3. 応募フォームのページを開きます。
+4. 入力したい項目を選択し、登録済みの情報を挿入します。
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/ac6076d6-5811-4460-a2af-393f1467d545" />
+
+
+## 設計上の工夫
+
+### 異なる応募フォームへの対応
+
+企業ごとにフォームの構造や項目名が異なることを考慮し、特定のWebサイトに依存しない入力支援を目指しました。
+
+### ユーザーによる入力の制御
+
+完全自動入力ではなく、ユーザーが必要な情報を選択して入力する方式を採用しています。これにより、意図しない入力を防ぎながら、繰り返し入力する負担を軽減します。
+
+### プライバシーへの配慮
+
+登録情報は `chrome.storage.local` を利用してブラウザ内に保存する設計としています。個人情報の管理に外部データベースを必要としません。
+
+## 今後の改善予定
+
+- 対応するフォーム形式の拡充
+- 登録情報のインポート・エクスポート機能
+- 入力操作およびUI/UXの改善
+- フォーム項目の認識精度の向上
+
